@@ -1,0 +1,54 @@
+'''
+1. Soma dos Elementos de uma Lista
+Escreva um programa que solicite ao usuário uma lista de números inteiros e
+calcule a soma de todos os elementos da lista.
+'''
+
+numeros = list(map(int, input("Digite os números separados por espaço: ").split()))
+soma = sum(numeros)
+print(f"A soma dos elementos da lista é: {soma}")
+
+'''
+2. Encontrar o Maior e o Menor Número
+Escreva um programa que leia uma lista de números digitados pelo usuário e
+determine o maior e o menor número presentes na lista.
+'''
+
+numeros = list(map(int, input("Digite os números separados por espaço: ").split()))
+maior = max(numeros)
+menor = min(numeros)
+print(f"O maior número é: {maior}")
+print(f"O menor número é: {menor}")
+
+
+'''
+3. Remover Duplicatas
+Escreva um programa que leia uma lista de números e remova os valores
+duplicados, mantendo a ordem original.
+'''
+
+numeros = list(map(int, input("Digite os números separados por espaço: ").split()))
+numeros_unicos = list(dict.fromkeys(numeros))
+print(f"Lista sem duplicatas: {numeros_unicos}")
+
+'''
+4. Inverter a Lista
+Escreva um programa que leia uma lista de palavras e exiba essa lista na ordem
+inversa.
+'''
+
+palavras = input("Digite as palavras separadas por espaço: ").split()
+palavras_invertidas = palavras[::-1]
+print("Lista invertida:", palavras_invertidas)
+
+'''
+5. Contar Ocorrências de um Elemento
+Escreva um programa que peça ao usuário para inserir uma lista de números e um
+número específico. O programa deve contar quantas vezes esse número aparece
+na lista.
+'''
+
+numeros = list(map(int, input("Digite os números separados por espaço: ").split()))
+numero_especifico = int(input("Digite o número específico para contar: "))
+ocorrencias = numeros.count(numero_especifico)
+print(f"O número {numero_especifico} aparece {ocorrencias} vezes na lista.")
