@@ -1,0 +1,89 @@
+'''
+1. Divisão Segura
+Crie um programa que solicite ao usuário dois números e realize a divisão do
+primeiro pelo segundo. Utilize tratamento de exceções para evitar erros de
+divisão por zero e erros de entrada inválida (como caracteres não numéricos).
+'''
+
+try:
+    num1 = float(input("Digite o primeiro número: "))
+    num2 = float(input("Digite o segundo número: "))
+    resultado = num1 / num2
+    print(f"Resultado: {resultado}")
+except ZeroDivisionError:
+    print("Erro: Divisão por zero não é permitida.")
+except ValueError:
+    print("Erro: Por favor, insira apenas números válidos.")
+
+'''
+2. Abertura Segura de Arquivo
+Escreva um programa que solicite ao usuário o nome de um arquivo para leitura. O
+programa deve tentar abrir o arquivo e exibir seu conteúdo. Utilize tratamento de
+exceções para lidar com a ausência do arquivo e outros possíveis erros.
+'''
+
+try:
+    nome_arquivo = input("Digite o nome do arquivo para leitura: ")
+    with open(nome_arquivo, 'r') as arquivo:
+        conteudo = arquivo.read()
+        print("Conteúdo do arquivo:")
+        print(conteudo)
+except FileNotFoundError:
+    print("Erro: Arquivo não encontrado.")
+except Exception as e:
+    print(f"Erro inesperado: {e}")
+
+'''
+3. Conversão de Entrada com Exceções
+Crie um programa que peça ao usuário para digitar um número inteiro. O programa
+deve tentar converter a entrada e exibir o dobro desse número. Caso o usuário
+digite um valor inválido, o programa deve exibir uma mensagem de erro e solicitar
+a entrada novamente até que um número válido seja fornecido.
+'''
+
+while True:
+    try:
+        numero = int(input("Digite um número inteiro: "))
+        print(f"O dobro do número é: {2 * numero}")
+        break
+    except ValueError:
+        print("Erro: Você não digitou um número inteiro. Tente novamente.")
+
+'''
+4. Acesso a Elementos de uma Lista
+Crie uma lista com cinco números e permita que o usuário informe um índice para
+acessar um valor da lista. Utilize tratamento de exceções para evitar erros caso o
+usuário digite um índice inválido.
+'''
+
+lista = [10, 20, 30, 40, 50]
+try:
+    indice = int(input("Digite o índice que deseja acessar (0 a 4): "))
+    print(f"Valor no índice {indice}: {lista[indice]}")
+except IndexError:
+    print("Erro: Índice fora do intervalo da lista.")
+except ValueError:
+    print("Erro: Por favor, insira um número inteiro válido.")
+
+'''
+5. Operações Bancárias com Tratamento de Erros
+Crie um programa que simule um sistema bancário simples. O saldo inicial do
+usuário é de R$ 1000,00. O programa deve permitir que o usuário insira um valor
+para saque e, caso o valor solicitado seja maior que o saldo disponível, uma
+exceção personalizada deve ser lançada informando que o saldo é insuficiente.
+'''
+
+class SaldoInsuficiente(Exception):
+    pass
+
+saldo = 1000.00
+try:
+    valor_saque = float(input("Digite o valor para saque: "))
+    if valor_saque > saldo:
+        raise SaldoInsuficiente("Saldo insuficiente para esta operação.")
+    saldo -= valor_saque
+    print(f"Saque realizado com sucesso! Saldo atual: R$ {saldo:.2f}")
+except SaldoInsuficiente as e:
+    print(e)
+except ValueError:
+    print("Erro: Por favor, insira um valor numérico válido.")
