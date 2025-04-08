@@ -1,0 +1,4 @@
+# 5. Conversão de Medidas – Metros para Centímetros
+metros = float(input("Digite o valor em metros: "))
+centimetros = metros * 100
+print(f"O valor em centímetros é: {centimetros:.2f} cm")
