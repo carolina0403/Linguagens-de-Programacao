@@ -1,0 +1,24 @@
+'''6. Tratamento de Exceções
+Crie um programa que solicite ao usuário dois números e tente dividir o primeiro pelo
+segundo. O programa deve capturar exceções como ZeroDivisionError e ValueError
+e exibir mensagens apropriadas.
+'''
+
+def dividir_numeros():
+    try:
+        num1 = float(input("Digite o primeiro número: "))
+        num2 = float(input("Digite o segundo número: "))
+        
+        resultado = num1 / num2
+        print(f"O resultado da divisão de {num1} por {num2} é: {resultado}")
+    
+    except ZeroDivisionError:
+        print("Erro: Não é possível dividir por zero.")
+    
+    except ValueError:
+        print("Erro: Entrada inválida. Certifique-se de digitar números válidos.")
+    
+    except Exception as e:
+        print(f"Um erro inesperado ocorreu: {e}")
+
+dividir_numeros()
