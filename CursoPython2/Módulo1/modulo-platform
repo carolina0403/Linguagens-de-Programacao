@@ -1,0 +1,18 @@
+'''Uso do Módulo platform
+Crie um programa que exiba informações sobre o sistema operacional usando o módulo
+platform. O programa deve imprimir:
+• Nome do sistema operacional
+• Versão do sistema
+• Arquitetura do processador
+'''
+
+import platform
+
+sistema_operacional = platform.system()
+print(f"Nome do sistema operacional: {sistema_operacional}")
+
+versao_sistema = platform.version()
+print(f"Versão do sistema: {versao_sistema}")
+
+arquitetura_processador = platform.architecture()[0]
+print(f"Arquitetura do processador: {arquitetura_processador}")
