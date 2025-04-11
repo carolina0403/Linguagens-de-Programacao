@@ -1,0 +1,23 @@
+'''13. Processamento de Arquivos de Texto
+Crie um programa que leia um arquivo chamado dados.txt, conte quantas linhas ele
+possui e exiba o conteúdo na tela.
+'''
+
+nome_arquivo = "dados.txt"
+
+try:
+
+    with open(nome_arquivo, "r") as arquivo:
+        linhas = arquivo.readlines()
+        
+        total_linhas = len(linhas)
+        print(f"O arquivo possui {total_linhas} linhas.\n")
+        
+        print("Conteúdo do arquivo:")
+        for linha in linhas:
+            print(linha.strip())  # Remove espaços ou quebras de linha extras
+    
+except FileNotFoundError:
+    print(f"Erro: O arquivo {nome_arquivo} não foi encontrado.")
+except Exception as e:
+    print(f"Ocorreu um erro inesperado: {e}")
