@@ -1,0 +1,33 @@
+'''5. Manipulação de Listas e Strings
+Solicite ao usuário que insira uma lista de palavras separadas por espaço. Em seguida,
+exiba:
+• A lista ordenada alfabeticamente.
+• O número total de palavras.
+• As palavras convertidas para maiúsculas.
+'''
+
+entrada = input("Digite uma lista de palavras separadas por espaço: ")
+
+lista_palavras = entrada.split()
+
+def ordenar_lista(lista):
+    return sorted(lista)
+
+def contar_palavras(lista):
+    return len(lista)
+
+def converter_maiusculas(lista):
+    return [palavra.upper() for palavra in lista]
+
+lista_ordenada = ordenar_lista(lista_palavras)
+total_palavras = contar_palavras(lista_palavras)
+palavras_maiusculas = converter_maiusculas(lista_palavras)
+
+print("\nLista ordenada alfabeticamente:")
+print(lista_ordenada)
+
+print("\nNúmero total de palavras:")
+print(total_palavras)
+
+print("\nPalavras convertidas para maiúsculas:")
+print(palavras_maiusculas)
