@@ -1,0 +1,31 @@
+'''4. Processamento de Strings
+Peça ao usuário para digitar uma frase e implemente funções para:
+• Contar quantas vezes cada vogal aparece na frase.
+• Exibir a frase ao contrário.
+• Substituir todos os espaços por -.
+'''
+
+# Solicitar ao usuário para digitar uma frase
+frase = input("Digite uma frase: ")
+
+def contar_vogais(texto):
+    vogais = "aeiou"
+    contagem = {vogal: texto.lower().count(vogal) for vogal in vogais}
+    return contagem
+
+def frase_ao_contrario(texto):
+    return texto[::-1]
+
+def substituir_espacos(texto):
+    return texto.replace(" ", "-")
+
+contagem_vogais = contar_vogais(frase)
+print("Contagem de vogais:")
+for vogal, quantidade in contagem_vogais.items():
+    print(f"{vogal}: {quantidade}")
+
+print("\nFrase ao contrário:")
+print(frase_ao_contrario(frase))
+
+print("\nFrase com espaços substituídos por '-':")
+print(substituir_espacos(frase))
