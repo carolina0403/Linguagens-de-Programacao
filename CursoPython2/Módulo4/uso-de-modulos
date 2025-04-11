@@ -1,0 +1,27 @@
+'''15. Uso dos Módulos os, time, datetime e calendar
+Crie um programa que:
+• Exibe o diretório atual usando os.getcwd().
+• Exibe a data e a hora atuais usando datetime.datetime.now().
+• Exibe o calendário do mês atual usando calendar.month().
+• Faz uma pausa de 3 segundos usando time.sleep(3).
+'''
+
+import os
+import time
+import datetime
+import calendar
+
+diretorio_atual = os.getcwd()
+print(f"Diretório atual: {diretorio_atual}")
+
+data_hora_atual = datetime.datetime.now()
+print(f"Data e hora atuais: {data_hora_atual}")
+
+ano_atual = data_hora_atual.year
+mes_atual = data_hora_atual.month
+print("\nCalendário do mês atual:")
+print(calendar.month(ano_atual, mes_atual))
+
+print("\nFazendo uma pausa de 3 segundos...")
+time.sleep(3)
+print("Pausa concluída.")
