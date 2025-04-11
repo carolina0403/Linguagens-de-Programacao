@@ -1,0 +1,19 @@
+'''12. Closures
+Implemente uma função multiplicador(fator) que recebe um número fator e
+retorna uma função que multiplica qualquer número por esse fator. Teste a função no
+programa principal.
+'''
+
+def multiplicador(fator):
+    def multiplicar(numero):
+        return numero * fator
+    return multiplicar
+
+fator = float(input("Digite o fator de multiplicação: "))
+
+funcao_multiplicar = multiplicador(fator)
+
+numero = float(input("Digite um número para multiplicar pelo fator: "))
+resultado = funcao_multiplicar(numero)
+
+print(f"O resultado de {numero} multiplicado por {fator} é: {resultado}")
