@@ -1,0 +1,25 @@
+'''14. Processamento de Arquivos Binários
+Escreva um programa que crie um arquivo binário dados.bin e grave uma lista de
+números inteiros nele. Em seguida, abra o arquivo e exiba os números armazenados.
+'''
+
+import pickle
+
+numeros = [10, 20, 30, 40, 50]
+
+nome_arquivo = "dados.bin"
+
+try:
+    with open(nome_arquivo, "wb") as arquivo:
+        pickle.dump(numeros, arquivo)
+    print("Números gravados com sucesso no arquivo binário.")
+except Exception as e:
+    print(f"Ocorreu um erro ao gravar o arquivo: {e}")
+
+try:
+    with open(nome_arquivo, "rb") as arquivo:
+        numeros_lidos = pickle.load(arquivo)
+    print("\nNúmeros lidos do arquivo binário:")
+    print(numeros_lidos)
+except Exception as e:
+    print(f"Ocorreu um erro ao ler o arquivo: {e}")
