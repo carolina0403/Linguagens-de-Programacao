@@ -1,0 +1,17 @@
+'''10. Geradores
+Implemente um gerador chamado contar_pares(n) que gera números pares até n. No
+programa principal, utilize for para exibir os números pares até um valor inserido pelo
+usuário.
+'''
+
+def contar_pares(n):
+    for numero in range(0, n + 1):  # Inclui o valor de n
+        if numero % 2 == 0:  # Verifica se o número é par
+            yield numero
+
+valor = int(input("Digite um valor para gerar números pares até esse número: "))
+
+print("\nNúmeros pares até", valor, ":")
+
+for par in contar_pares(valor):
+    print(par)
