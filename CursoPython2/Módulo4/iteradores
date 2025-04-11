@@ -1,0 +1,29 @@
+'''11. Iteradores
+Crie uma classe Contador que implemente um iterador que conta de 1 até n. No
+programa principal, percorra os valores utilizando for.
+'''
+
+class Contador:
+    def __init__(self, n):
+        self.n = n
+        self.atual = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.atual <= self.n:
+            valor = self.atual
+            self.atual += 1
+            return valor
+        else:
+            raise StopIteration
+
+valor = int(input("Digite um valor para contar de 1 até esse número: "))
+
+contador = Contador(valor)
+
+print("\nContando de 1 até", valor, ":")
+
+for numero in contador:
+    print(numero)
